@@ -7,7 +7,11 @@
 LRT_STAT(n, x, s)
 }
 \arguments{
-\item{s}{}
+\item{n}{... as above}
+
+\item{x}{...}
+
+\item{s}{...}
 }
 \value{
 xx

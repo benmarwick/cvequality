@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{mlrt_test2}
 \alias{mlrt_test2}
-\title{modified signed-likelihood ratio test (SLRT) for equality of CVs}
+\title{# Modified signed-likelihood ratio test (SLRT) for equality of CVs, using summary statistics when raw measurement data are not available.}
 \usage{
 mlrt_test2(nr, n, x, s)
 }
@@ -19,12 +19,11 @@ mlrt_test2(nr, n, x, s)
 a list with the test statistic and p-value
 }
 \description{
-modified signed-likelihood ratio test (SLRT) for equality of CVs
+# Modified signed-likelihood ratio test (SLRT) for equality of CVs, using summary statistics when raw measurement data are not available.
 }
 \examples{
 
 # Summary stats from Feltz and Miller 1996
-#  \\url{http://onlinelibrary.wiley.com.sci-hub.cc/doi/10.1002/(SICI)1097-0258(19960330)15:6\%3C647::AID-SIM184\%3E3.0.CO;2-P/epd} (originally \\url{http://www.tandfonline.com.sci-hub.cc/doi/abs/10.1080/15321819308019845?journalCode=ljii19}
 
 miller <- data.frame(test = c('ELISA', 'WEHI', '`Viral inhibition`'),
                     Mean = c(6.8, 8.5, 6.0),
@@ -36,5 +35,8 @@ miller$SD <- with(miller, CV * Mean)
  mlrt_test2(nr = 1e3, n = miller$N, s = miller$SD, x = miller$Mean)
 
 
+}
+\references{
+\url{http://link.springer.com/article/10.1007/s00180-013-0445-2}
 }
 

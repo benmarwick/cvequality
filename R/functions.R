@@ -1,19 +1,4 @@
-# Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
-#
-# You can learn more about package authoring with RStudio at:
-#
-#   http://r-pkgs.had.co.nz/
-#
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Build and Reload Package:  'Ctrl + Shift + B'
-#   Check Package:             'Ctrl + Shift + E'
-#   Test Package:              'Ctrl + Shift + T'
-
-
+globalVariables(c("stats", "aggregate", "pchisq", "rchisq", "rnorm", "sd"))
 
 # Miller test for raw data ----------------------------
 
@@ -84,7 +69,6 @@ asymptotic_test <-
 #' @examples
 #'
 #' # Summary stats from Feltz and Miller 1996
-#' \url{http://onlinelibrary.wiley.com.sci-hub.cc/doi/10.1002/(SICI)1097-0258(19960330)15:6%3C647::AID-SIM184%3E3.0.CO;2-P/epdf} (originally \url{http://www.tandfonline.com.sci-hub.cc/doi/abs/10.1080/15321819308019845?journalCode=ljii19}
 #'
 #' miller <- data.frame(test = c('ELISA', 'WEHI', '`Viral inhibition`'),
 #'                     Mean = c(6.8, 8.5, 6.0),
@@ -127,13 +111,11 @@ asymptotic_test2 <-
 
 # Krishnamoorthy test for raw data --------------------
 
-# Modified signed-likelihood ratio test (SLRT) for equality of CVs, using measurement data
+#' Modified signed-likelihood ratio test (SLRT) for equality of CVs, using measurement data
 
-# \url{http://link.springer.com/article/10.1007/s00180-013-0445-2}
-# Krishnamoorthy, K. & Lee, M. Comput Stat (2014) 29: 215. doi:10.1007/s00180-013-0445-2
-# This code emailed to me by the author
-
-#' modified signed-likelihood ratio test (SLRT) for equality of CVs
+#' @references \url{http://link.springer.com/article/10.1007/s00180-013-0445-2}
+#' Krishnamoorthy, K. & Lee, M. Comput Stat (2014) 29: 215. doi:10.1007/s00180-013-0445-2
+#'
 #'
 #' @param nr numeric vector length one, number of simulation runs, default is 1e3
 #' @param x a numeric vector containing individual measurement values
@@ -190,13 +172,16 @@ mlrt_test <-
   }
 
 
-# Modified signed-likelihood ratio test (SLRT) for equality of CVs, using summary statistics when raw measurement data are not available.
 
-# \url{http://link.springer.com/article/10.1007/s00180-013-0445-2}
+
+
+
+#' # Modified signed-likelihood ratio test (SLRT) for equality of CVs, using summary statistics when raw measurement data are not available.
+#'
+#'
 # Krishnamoorthy, K. & Lee, M. Comput Stat (2014) 29: 215. doi:10.1007/s00180-013-0445-2
-# This code emailed to me by the author
-
-#' modified signed-likelihood ratio test (SLRT) for equality of CVs
+#' @references \url{http://link.springer.com/article/10.1007/s00180-013-0445-2}
+#
 #'
 #' @param nr numeric vector lenght one, number of simulation runs
 #' @param n a numeric vector, the number of observations in each group
@@ -209,7 +194,6 @@ mlrt_test <-
 #' @examples
 #'
 #' # Summary stats from Feltz and Miller 1996
-#'#  \url{http://onlinelibrary.wiley.com.sci-hub.cc/doi/10.1002/(SICI)1097-0258(19960330)15:6%3C647::AID-SIM184%3E3.0.CO;2-P/epd} (originally \url{http://www.tandfonline.com.sci-hub.cc/doi/abs/10.1080/15321819308019845?journalCode=ljii19}
 #'
 #' miller <- data.frame(test = c('ELISA', 'WEHI', '`Viral inhibition`'),
 #'                     Mean = c(6.8, 8.5, 6.0),
@@ -253,9 +237,9 @@ mlrt_test2 <-
 
 #' LRT_STAT, required by mlrt_test
 #'
-#' @param n
-#' @param x
-#' @param s
+#' @param n ... as above
+#' @param x ...
+#' @param s ...
 #'
 #' @return xx
 #'

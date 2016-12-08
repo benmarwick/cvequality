@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{mlrt_test}
 \alias{mlrt_test}
-\title{modified signed-likelihood ratio test (SLRT) for equality of CVs}
+\title{Modified signed-likelihood ratio test (SLRT) for equality of CVs, using measurement data}
 \usage{
 mlrt_test(nr = 1000, x, y)
 }
@@ -17,7 +17,7 @@ mlrt_test(nr = 1000, x, y)
 a list with the test statistic and p-value
 }
 \description{
-modified signed-likelihood ratio test (SLRT) for equality of CVs
+Modified signed-likelihood ratio test (SLRT) for equality of CVs, using measurement data
 }
 \examples{
 
@@ -27,5 +27,9 @@ modified signed-likelihood ratio test (SLRT) for equality of CVs
  mlrt_test(nr = 1e3, x, y)
 
 
+}
+\references{
+\url{http://link.springer.com/article/10.1007/s00180-013-0445-2}
+Krishnamoorthy, K. & Lee, M. Comput Stat (2014) 29: 215. doi:10.1007/s00180-013-0445-2
 }
 
