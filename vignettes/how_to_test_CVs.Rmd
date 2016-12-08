@@ -19,6 +19,8 @@ $$c_v = \frac{\sigma}{\mu}$$
 
 Although widely used in chemistry, engineering, physics, finance, and other fields, we lack convienent methods for testing if $c_v$ values from different samples are the equal or not. Numerous statistical methods have been described in publications, but until now, none have been implemented in an easy-to-use statistical package. This package aims to remedy this situation by providing methods for testing for the equality of $c_v$ values from different samples. 
 
+Note that there are some limitations to using $c_v$ values. The main restriction is that $c_v$ should only be computed for data measured on a ratio scale, as these are the measurements that can only take non-negative values. For example it is not appropriate to compare $c_v$ of measurements made using Celcius and Fahrenheit, because these are interval scales that can take negative values. When the mean of a variable is zero, the $c_v$ cannot be computed, and when the mean is close to zero and the variable contains both positive and negative values, then the $c_v$ can be inaccurate. A lesser concern is that log-normal data have stationary $c_v$ values, and so they are generally uniformative. 
+
 ## What tests are included?
 
 This package includes two tests:    
