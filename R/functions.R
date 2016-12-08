@@ -24,6 +24,21 @@ globalVariables(c("stats", "aggregate", "pchisq", "rchisq", "rnorm", "sd"))
 asymptotic_test <-
   function(x, y){
 
+    if (!is.numeric(x) && (!is.numeric(y) | !is.character(y) | !is.integer(y))) {
+      warning("x is not numeric or y is not numeric, character or integer: returning NA")
+      return(NA_real_)
+    }
+
+    if (anyNA(x)) {
+      warning("x cannot contain any NA values: returning NA")
+      return(NA_real_)
+    }
+
+    if (anyNA(y)) {
+      warning("y cannot contain any NA values: returning NA")
+      return(NA_real_)
+    }
+
     # k is the number of groups
     k <- length(unique(y))
     # j is an index referring to the group number
@@ -82,6 +97,13 @@ asymptotic_test <-
 asymptotic_test2 <-
   function(k, n, s, x){
 
+
+    if (!is.integer(k) && !is.numeric(k) && !is.integer(n) && !is.numeric(n) && !is.numeric(s) && !is.numeric(x) ){
+      warning("input values are not numeric: returning NA")
+      return(NA_real_)
+    }
+
+
     # k is the number of groups
     k <- k
     # j is an index referring to the group number
@@ -134,6 +156,21 @@ asymptotic_test2 <-
 #'
 mlrt_test <-
   function(nr = 1e3, x, y){
+
+    if (!is.numeric(x) && !is.numeric(y) && !is.character(y)) {
+      warning("x is not numeric or y is not numeric or character: returning NA")
+      return(NA_real_)
+    }
+
+    if (anyNA(x)) {
+      warning("x cannot contain any NA values: returning NA")
+    return(NA_real_)
+    }
+
+    if (anyNA(y)) {
+      warning("y cannot contain any NA values: returning NA")
+    return(NA_real_)
+      }
 
     # j is an index referring to the group number
     # n is the sample size of the jth group
@@ -207,6 +244,13 @@ mlrt_test <-
 #'
 mlrt_test2 <-
   function(nr, n, x, s){
+
+    if (!is.numeric(nr) &&!is.numeric(n) && !is.integer(n) && !is.numeric(s) && !is.numeric(x)) {
+      warning("input values are not numeric: returning NA")
+      return(NA_real_)
+    }
+
+
   k <- length(x)
   gv <- as.vector(nr)
   df <- n - 1

@@ -27,4 +27,6 @@ To install the package:
 devtools::install_github("benmarwick/cvequality")
 ```
 
+Please see the [vignette](vignettes/how_to_test_CVs.Rmd) for detailed examples of how to use the functions in this package. 
+
 Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

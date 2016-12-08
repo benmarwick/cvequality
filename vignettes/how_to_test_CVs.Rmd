@@ -11,15 +11,21 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      warning = FALSE,
+                      message = FALSE)
+```
+
 ## Introduction
 
 The [coefficient of variation statistic](https://en.wikipedia.org/wiki/Coefficient_of_variation) is a simple and widely-used standardized measure of the spread of a set of measurements of a sample. It is a useful value because it allows us to directly compare variation in samples measured with different units, or with very different means. It is also known as as relative standard deviation (RSD), and defined as the standard deviation divided by the mean:
 
 $$c_v = \frac{\sigma}{\mu}$$
 
-The coefficient of variation was introduced by Karl Pearson in [1896](www.jstor.org/stable/90707). Since then it has become widely used in chemistry, engineering, physics, sociology, finance, and other fields. Despite its ubiquity, we lack convienent methods for testing if $c_v$ values from different samples are the equal or not. Numerous statistical methods have been described in publications, but until now, none have been implemented in an easy-to-use statistical package. This package aims to remedy this situation by providing methods for testing for the equality of $c_v$ values from different samples. 
+The coefficient of variation was introduced by Karl Pearson in [1896](www.jstor.org/stable/90707). Since then it has become widely used in chemistry, engineering, physics, sociology, finance, and other fields. Despite its ubiquity, we lack convenient methods for testing if $c_v$ values from different samples are the equal or not. Numerous statistical methods have been described in publications, but until now, none have been implemented in an easy-to-use statistical package. This package aims to remedy this situation by providing methods for testing for the equality of $c_v$ values from different samples. 
 
-Note that there are some limitations to using $c_v$ values. The main restriction is that $c_v$ should only be computed for data measured on a ratio scale, as these are the measurements that can only take non-negative values. For example it is not appropriate to compare $c_v$ of measurements made using Celcius and Fahrenheit, because these are interval scales that can take negative values and have arbitrary zero points. When the mean of a variable is zero, the $c_v$ cannot be computed, and when the mean is close to zero and the variable contains both positive and negative values, then the $c_v$ can be inaccurate. A lesser concern is that log-normal data have stationary $c_v$ values, and so they are generally uniformative. 
+Note that there are some limitations to using $c_v$ values. The main restriction is that $c_v$ should only be computed for data measured on a ratio scale, as these are the measurements that can only take non-negative values. For example it is not appropriate to compare $c_v$ of measurements made using Celsius and Fahrenheit, because these are interval scales that can take negative values and have arbitrary zero points. When the mean of a variable is zero, the $c_v$ cannot be computed, and when the mean is close to zero and the variable contains both positive and negative values, then the $c_v$ can be inaccurate. A lesser concern is that log-normal data have stationary $c_v$ values, and so they are generally uninformative. 
 
 ## What tests are included?
 
@@ -46,13 +52,13 @@ Then the test statistic can be computed with:
 
 $$\begin{aligned} D'A D= \widehat{\tau }_c^{-2}\left( 0.5+\widehat{\tau }_c^2\right) ^{-1}\left[ \sum _{i=1}^km_i\left(\frac{s_i}{\bar{x}_i} \right)^2-\frac{\widehat{\tau }_c^2}{M} \right] \end{aligned}$$
 
-The $D'AD$ value measures how far each sample $c_v$ is from our estimate of the population $c_v$. Feltz and Miller (1996) note that the $D'AD$ value distributes as a central $\chi^2$ randowm variable with $k-1$ degrees of freedom, from which a p-value can be computed. 
+The $D'AD$ value measures how far each sample $c_v$ is from our estimate of the population $c_v$. Feltz and Miller (1996) note that the $D'AD$ value distributes as a central $\chi^2$ random variable with $k-1$ degrees of freedom, from which a p-value can be computed. 
 
 We include the Krishnamoorthy and Lee (2014) test as a more recent development with lower rates of type I error, better performance with uneven sample numbers, and more power across a range of conditions. The formulae for the Krishnamoorthy and Lee (2014) are quite involved, and we do not reproduce them here, but refer the reader to the [paper](http://link.springer.com/article/10.1007/s00180-013-0445-2). 
 
 ## How to use the tests?
 
-For each test there are two functions, which we demonstrate below. The first function uses raw measurement data as its inputs. The second function uses only summary statisitics as its inputs, intended for use when the raw data are not available. 
+For each test there are two functions, which we demonstrate below. The first function uses raw measurement data as its inputs. The second function uses only summary statistics as its inputs, intended for use when the raw data are not available. 
 
 To install the package:
 
@@ -60,61 +66,204 @@ To install the package:
 devtools::install_github("benmarwick/cvequality")
 ```
 
-To demonstrate the use the functions with raw data we will use Galton's [(1886)](http://www.jstor.org/stable/2841583) observations of heights of 934 children in 205 families. This is the same dataset that Pearson used when he introduced the $c_v$
+
+### Using the functions with raw data of individual observations
+
+To demonstrate the use the functions with raw data we will use Galton's [(1886)](http://www.jstor.org/stable/2841583) observations of heights (in inches) of 934 children in 205 families. This is the same dataset that Pearson used when he introduced the $c_v$
 
 ```{r}
 # read in the data, we obtained this from the HistData package
 GaltonFamilies <- read.csv("GaltonFamilies.csv")
 
-# Is variation in height is greater for males than females? Let's reshape the
-# data so we have a dataframe with one column of observations, and a second
-# column of a grouping variable
-parent_height_by_gender <- 
-  data.frame(height = c(GaltonFamilies$father, # observations
-                        GaltonFamilies$mother),
-             # grouping variable
-             gender = c(rep("male", length(GaltonFamilies$father)),
-                        rep("female", length(GaltonFamilies$mother))))
-
-# CVs for each gender
-cv_parent_male <- with(GaltonFamilies, sd(father)/mean(father))
-cv_parent_female <- with(GaltonFamilies, sd(mother)/mean(mother))
+library(knitr)
+kable(head(GaltonFamilies), caption = "Preview of first few rows of the GaltonFamilies data")
 ```
 
-We can take a quick look at the data to get some intuition about the variation:
+Do male and female children have different variation in their heights? Let's have a look, first with a plot to get some intuition about the variation:
 
 ```{r}
 library(ggplot2)
 library(ggbeeswarm)
-ggplot(parent_height_by_gender, 
+ggplot(GaltonFamilies, 
        aes(gender, 
-           height)) +
+           childHeight)) +
   geom_boxplot() +
-  geom_quasirandom() +
+  geom_quasirandom(alpha = 0.05) +
   theme_bw()
-
 ```
 
+Their spreads look quite similar, let's test our intuition, first with Feltz and Miller's (1996) asymptotic test:
+
+```{r}
+# test for difference in CVs between boys and girls
+library(cvequality)
+child_height_by_gender_cv_test <- 
+with(GaltonFamilies, 
+     asymptotic_test(childHeight,
+                     gender))
+```
+
+We can repeat the test with Krishnamoorthy and Lee's (2014) modified signed-likelihood ratio test:
 
 ```{r}
 
-# test for difference between fathers and mothers
-library(cvequality)
-parent_height_by_gender_cv_test <- 
-with(parent_height_by_gender, 
-     asymptotic_test(height,
-                     gender))
+child_height_by_gender_cv_test_MSLRT <- 
+with(GaltonFamilies, 
+     mlrt_test(nr = 1e4, 
+               childHeight,
+               gender))
+```
+
+```{r, echo = FALSE}
+# make a table to display the results
+child_test_summary <- 
+  data.frame(`Test name` = c("asymptotic", 
+                           "M-SLRT"),
+             `Test statistic` = c(child_height_by_gender_cv_test$D_AD,
+                                  child_height_by_gender_cv_test_MSLRT$MLRT),
+             `p-value` = c(child_height_by_gender_cv_test$p_value,
+                                  child_height_by_gender_cv_test_MSLRT$p_value),
+             check.names = FALSE)
+
+kable(child_test_summary, caption =  "Summary of tests on the equality of CVs in child heights by gender")
+```
+
+We conclude that the $c_v$ values are very similar, and there is no difference in the variation of heights in male and female children. 
+
+For something a little different, let's look at measurements of 600 stone artefacts from archaeological sites in Berkshire, England dating to the Lower Paleolithic (Fox and Baker 2006).  
+
+```{r}
+# read in the data, we obtained this from the archdata package
+GaltonFamilies <- read.csv("GaltonFamilies.csv")
+
+handaxes <- read.csv("Handaxes.csv")
+```
+
+Is the length of the artefacts more variable than the other dimensions??
+
+We need to reshape the data from the one-artefact-per-line format to a long format where the variable names are in one column, and the value for that variable is in another column:
+
+```{r}
+library(tidyverse)
+handaxes_reshape <- 
+  handaxes %>% 
+  select(c(L, L1, B, B1, B2, T, T1)) %>% 
+  gather(variable, value) %>% 
+  na.omit
+```
+
+Let's have a look to get an idea of the variation in each variable:
+
+```{r}
+ggplot(handaxes_reshape, 
+       aes(variable, 
+           value)) +
+  geom_boxplot() +
+  geom_quasirandom(alpha = 0.02) +
+  theme_bw()
+```
+
+It looks like the L variable (length) has much greater variation that the others. Let's test to see if this is due to chance or not:
+
+```{r}
+handaxes_asymptotic_test <- 
+with(handaxes_reshape, 
+     asymptotic_test(value, 
+                     variable))
+
+handaxes_mlrt_test <- 
+with(handaxes_reshape, 
+     mlrt_test(nr = 1e4, 
+               value, 
+               variable))
+```
+
+```{r, echo = FALSE}
+# make a table to display the results
+handaxe_test_summary <- 
+  data.frame(`Test name` = c("asymptotic", 
+                           "M-SLRT"),
+             `Test statistic` = c(handaxes_asymptotic_test$D_AD,
+                                  handaxes_mlrt_test$MLRT),
+             `p-value` = c(handaxes_asymptotic_test$p_value,
+                           handaxes_mlrt_test$p_value),
+             check.names = FALSE)
+
+kable(handaxe_test_summary, caption =  "Summary of tests on the equality of CVs in measurements of different variables of handaxe size")
+```
+
+We see low p-values (rounded to zero in the table the asymptotic test p-value is `r handaxes_asymptotic_test$p_value`), suggesting that the variation in $c_v$ values across different measurements is not due to chance. Length is more variable than the other dimensions of the handaxes. 
+
+### Using the functions with summary statistics 
+
+In some circumstances we do not have access to the individual measurement data. For the situations we provide versions of the functions that take summary statistics as input. 
+
+Here's an example using the same data that Feltz and Miller (1996) present in their paper. They provide mean, $c_v$, and n for three groups of measurements:
+
+```{r}
+miller <- data.frame(test = c('ELISA', 'WEHI', '`Viral inhibition`'),
+                     Mean = c(6.8, 8.5, 6.0),
+                     CV =   c(0.090, 0.462, 0.340),
+                     N =    c(5, 5, 5))
+```
+
+To test for the equality of these $c_v$ values, we need the standard deviations of the observations, which are easily obtained:
+
+```{r}
+# compute SD from mean and cv
+miller$SD <- with(miller, CV * Mean)
+```
+
+We can plot to see what to expect from the test:
+
+```{r}
+ggplot(miller,
+       aes(test,
+           Mean)) +
+  # points to show mean values
+  geom_point(size = 4) +
+  # lines to show standard deviations
+  geom_linerange(aes(ymin = Mean - SD,
+                     ymax = Mean + SD)) +
+  theme_bw()
+```
+
+Looking at the plot, we might expect that the ELISA values have significantly less variation that the other two groups. Let's see what the tests suggest:
+
+```{r}
+miller_asymptotic_test2 <- 
+asymptotic_test2(k = nrow(miller), 
+                 n = miller$N, 
+                 s = miller$SD, 
+                 x = miller$Mean)
 
 ```
 
-We see that the $c_v$ for mothers (`r cv_parent_female`) and fathers (`r cv_parent_male`) are very simliar. The Feltz and Miller asymptotic test returns a D'AD statistic value of `r parent_height_by_gender_cv_test$D_AD`, which results in a p-value of `r parent_height_by_gender_cv_test$p_value`. We do not reject the hypothesis that both groups have the same $c_v$. 
+The asymptotic test statistic is `r miller_asymptotic_test2$D_AD`, which gives a p-value of `r miller_asymptotic_test2$p_value`. Assuming a typical value of 0.05 for $\alpha$, this test does lead us to reject the hypothesis of no difference in variance. So we would conclude that the ELISA values are no less variable than the other two groups.
+
+Let's see how the modified signed-likelihood ratio test performs:
+
+```{r}
+miller_mlrt_test2 <-
+mlrt_test2(nr = 1e4, 
+           n = miller$N, 
+           s = miller$SD, 
+           x = miller$Mean)
+
+```
+
+This results in `r miller_mlrt_test2$D_AD` for the test statistic, and a p-value of `r miller_mlrt_test2$p_value`. This p-value would lead us to reject the hypothesis of no difference in variance. So unlike the asymptotic test, this M-SLR test would conclude that the ELISA values _are_ significantly less variable than the other two groups, consistent with our osbervations of the plot. 
 
 
 
+## References
 
-### References
+Feltz, C. J., & Miller, G. E. (1996). An asymptotic test for the equality of coefficients of variation from k populations. _Statistics in Medicine_, 15(6), 647-658
 
+Fox, William and Tony Baker. 2006. Dimensions of 600 Acheulean Handaxes from Furze Platt, Maidenhead, Berkshire, England. Online at http://ele.net/acheulean/FPatROM.htm.
 
-Galton, F. (1886). Regression Towards Mediocrity in Hereditary. Stature Journal of the Anthropological Institute, 15, 246-263. http://www.jstor.org/stable/2841583
+Galton, F. (1886). Regression Towards Mediocrity in Hereditary Stature _Journal of the Anthropological Institute_, 15, 246-263. http://www.jstor.org/stable/2841583
 
-Pearson, K. (1896). Mathematical Contributions to the Theory of Evolution. III. Regression, Heredity, and Panmixia. Philosophical Transactions of the Royal Society of London. Series A, Containing Papers of a Mathematical or Physical Character, 187, 253-318. Retrieved from http://www.jstor.org/stable/90707
+Krishnamoorthy, K., & Lee, M. (2014). Improved tests for the equality of normal coefficients of variation. _Computational Statistics_, 29(1-2), 215-232.
+
+Pearson, K. (1896). Mathematical Contributions to the Theory of Evolution. III. Regression, Heredity, and Panmixia. _Philosophical Transactions of the Royal Society of London_. Series A, Containing Papers of a Mathematical or Physical Character, 187, 253-318. Retrieved from http://www.jstor.org/stable/90707
