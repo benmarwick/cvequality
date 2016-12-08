@@ -1,0 +1,69 @@
+---
+title: "Testing Coefficients of Variation from multiple samples"
+author: "Ben Marwick"
+date: "`r Sys.Date()`"
+output:
+      rmarkdown::html_vignette:
+        fig_caption: yes
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+The [coefficient of variation statistic](https://en.wikipedia.org/wiki/Coefficient_of_variation) is a simple and widely-used standardized measure of the spread of a set of measurements of a sample. It is a useful value because it allows us to directly compare variation in samples measured with different units, or with very different means. It is also known as as relative standard deviation (RSD), and defined as the standard deviation divided by the mean:
+
+$$c_v = \frac{\sigma}{\mu}$$
+
+Although widely used in chemistry, engineering, physics, finance, and other fields, we lack convienent methods for testing if $c_v$ values from different samples are the equal or not. Numerous statistical methods have been described in publications, but until now, none have been implemented in an easy-to-use statistical package. This package aims to remedy this situation by providing methods for testing for the equality of $c_v$ values from different samples. 
+
+## What tests are included?
+
+This package includes two tests:    
+
+- the 'Asymptotic test for the equality of coefficients of variation from k populations' (Feltz and Miller 1996)    
+- the 'Modified signed-likelihood ratio test (SLRT) for equality of CVs' (Krishnamoorthy and Lee 2014)
+
+We include the Feltz and Miller (1996) test because it is widely cited as an authoritative test for the equality of $c_v$ values that performs better than many approximative tests. It is a 'gold standard' test for comparing multiple $c_v$. Our implementation is based on the following from Feltz and Miller (1996):
+
+Let $s_i$ be the observed standard deviation of the $i$th sample (or group of measurements), $x_i$ be the observed mean of the $i$th sample, and let 
+
+$$m_i=n_i-1$$
+
+and we do not know the population $c_v$, so let $\widehat{\tau }_c$ be an estimate as follows:
+
+$$\widehat{\tau }_c = \frac{\left( \sum _{j=1}^km_j\frac{S_j}{\bar{x}_j} \right)}{M}$$ 
+
+where 
+
+$$M=\sum _{j=1}^m m_j$$ 
+
+Then the test statistic can be computed with: 
+
+$$\begin{aligned} D'A D= \widehat{\tau }_c^{-2}\left( 0.5+\widehat{\tau }_c^2\right) ^{-1}\left[ \sum _{i=1}^km_i\left(\frac{s_i}{\bar{x}_i} \right)^2-\frac{\widehat{\tau }_c^2}{M} \right] \end{aligned}$$
+
+The $D'AD$ value measures how far each sample $c_v$ is from our estimate of the population $c_v$. Feltz and Miller (1996) note that the $D'AD$ value distributes as a central $\chi^2$ randowm variable with $k-1$ degrees of freedom, from which a p-value can be computed. 
+
+We include the Krishnamoorthy and Lee (2014) test as a more recent development with lower rates of type I error, better performance with uneven sample numbers, and more power across a range of conditions. The formulae for the Krishnamoorthy and Lee (2014) are quite involved, and we do not reproduce them here, but refer the reader to the [paper](http://link.springer.com/article/10.1007/s00180-013-0445-2). 
+
+## How to use the tests?
+
+For each test there are two functions, which we demonstrate below. The first function uses raw measurement data as its inputs. The second function uses only summary statisitics as its inputs, intended for use when the raw data are not available. 
+
+To install the package:
+
+```{r eval = FALSE}
+devtools::install_github("benmarwick/cvequality")
+```
+
+To use the functions with raw data:
+
+```{r}
+library(cvequality)
+
+
+```
+
+
