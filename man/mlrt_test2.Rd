@@ -24,7 +24,7 @@ modified signed-likelihood ratio test (SLRT) for equality of CVs
 \examples{
 
 # Summary stats from Feltz and Miller 1996
-#  http://onlinelibrary.wiley.com.sci-hub.cc/doi/10.1002/(SICI)1097-0258(19960330)15:6\%3C647::AID-SIM184\%3E3.0.CO;2-P/epdf (originally http://www.tandfonline.com.sci-hub.cc/doi/abs/10.1080/15321819308019845?journalCode=ljii19
+#  \\url{http://onlinelibrary.wiley.com.sci-hub.cc/doi/10.1002/(SICI)1097-0258(19960330)15:6\%3C647::AID-SIM184\%3E3.0.CO;2-P/epd} (originally \\url{http://www.tandfonline.com.sci-hub.cc/doi/abs/10.1080/15321819308019845?journalCode=ljii19}
 
 miller <- data.frame(test = c('ELISA', 'WEHI', '`Viral inhibition`'),
                     Mean = c(6.8, 8.5, 6.0),

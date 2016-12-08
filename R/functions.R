@@ -84,7 +84,7 @@ asymptotic_test <-
 #' @examples
 #'
 #' # Summary stats from Feltz and Miller 1996
-#' http://onlinelibrary.wiley.com.sci-hub.cc/doi/10.1002/(SICI)1097-0258(19960330)15:6%3C647::AID-SIM184%3E3.0.CO;2-P/epdf (originally http://www.tandfonline.com.sci-hub.cc/doi/abs/10.1080/15321819308019845?journalCode=ljii19
+#' \url{http://onlinelibrary.wiley.com.sci-hub.cc/doi/10.1002/(SICI)1097-0258(19960330)15:6%3C647::AID-SIM184%3E3.0.CO;2-P/epdf} (originally \url{http://www.tandfonline.com.sci-hub.cc/doi/abs/10.1080/15321819308019845?journalCode=ljii19}
 #'
 #' miller <- data.frame(test = c('ELISA', 'WEHI', '`Viral inhibition`'),
 #'                     Mean = c(6.8, 8.5, 6.0),
@@ -129,7 +129,7 @@ asymptotic_test2 <-
 
 # Modified signed-likelihood ratio test (SLRT) for equality of CVs, using measurement data
 
-# http://link.springer.com/article/10.1007/s00180-013-0445-2
+# \url{http://link.springer.com/article/10.1007/s00180-013-0445-2}
 # Krishnamoorthy, K. & Lee, M. Comput Stat (2014) 29: 215. doi:10.1007/s00180-013-0445-2
 # This code emailed to me by the author
 
@@ -192,7 +192,7 @@ mlrt_test <-
 
 # Modified signed-likelihood ratio test (SLRT) for equality of CVs, using summary statistics when raw measurement data are not available.
 
-# http://link.springer.com/article/10.1007/s00180-013-0445-2
+# \url{http://link.springer.com/article/10.1007/s00180-013-0445-2}
 # Krishnamoorthy, K. & Lee, M. Comput Stat (2014) 29: 215. doi:10.1007/s00180-013-0445-2
 # This code emailed to me by the author
 
@@ -209,7 +209,7 @@ mlrt_test <-
 #' @examples
 #'
 #' # Summary stats from Feltz and Miller 1996
-#'#  http://onlinelibrary.wiley.com.sci-hub.cc/doi/10.1002/(SICI)1097-0258(19960330)15:6%3C647::AID-SIM184%3E3.0.CO;2-P/epdf (originally http://www.tandfonline.com.sci-hub.cc/doi/abs/10.1080/15321819308019845?journalCode=ljii19
+#'#  \url{http://onlinelibrary.wiley.com.sci-hub.cc/doi/10.1002/(SICI)1097-0258(19960330)15:6%3C647::AID-SIM184%3E3.0.CO;2-P/epd} (originally \url{http://www.tandfonline.com.sci-hub.cc/doi/abs/10.1080/15321819308019845?journalCode=ljii19}
 #'
 #' miller <- data.frame(test = c('ELISA', 'WEHI', '`Viral inhibition`'),
 #'                     Mean = c(6.8, 8.5, 6.0),
