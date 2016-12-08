@@ -2,10 +2,9 @@ Package: cvequality
 Type: Package
 Title: Tests for the equality of coefficents of variation from multiple groups
 Version: 0.1.0
-Author: Who wrote it
+Authors@R: c(person("Ben", "Marwick", email = "benmarwick@gmail.com", role = c("aut", "cre")), person("Kalimuthu", "Krishnamoorthy", email = "krishna@louisiana.edu", role = c("aut")))
 Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: Contains fucntions for testing for significant differences between multiple coefficents of variation. Includes Feltz and Miller's (1996) asymptotic test and Krishnamoorthy and Lee's (2014) modified signed-likelihood ratio test
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
