@@ -130,7 +130,7 @@ kable(child_test_summary, caption =  "Summary of tests on the equality of CVs in
 
 We conclude that the $c_v$ values are very similar, and there is no difference in the variation of heights in male and female children. 
 
-For something a little different, let's look at measurements of 600 stone artefacts from archaeological sites in Berkshire, England dating to the Lower Paleolithic (Fox and Baker 2006).  
+For something a little different, let's look at measurements of 600 stone artefacts from archaeological sites in Berkshire, England dating to the Lower Paleolithic (Fox and Baker 2006). We want to know if the length of the artefacts more variable than the other dimensions.
 
 ```{r}
 # read in the data, we obtained this from the archdata package
@@ -138,8 +138,6 @@ GaltonFamilies <- read.csv("GaltonFamilies.csv")
 
 handaxes <- read.csv("Handaxes.csv")
 ```
-
-Is the length of the artefacts more variable than the other dimensions??
 
 We need to reshape the data from the one-artefact-per-line format to a long format where the variable names are in one column, and the value for that variable is in another column:
 
@@ -258,12 +256,12 @@ This results in `r miller_mlrt_test2$D_AD` for the test statistic, and a p-value
 
 ## References
 
-Feltz, C. J., & Miller, G. E. (1996). An asymptotic test for the equality of coefficients of variation from k populations. _Statistics in Medicine_, 15(6), 647-658
+Feltz, C. J., & Miller, G. E. (1996). An asymptotic test for the equality of coefficients of variation from k populations. _Statistics in Medicine_, 15(6), 647-658. https://www.ncbi.nlm.nih.gov/pubmed/8731006
 
 Fox, William and Tony Baker. 2006. Dimensions of 600 Acheulean Handaxes from Furze Platt, Maidenhead, Berkshire, England. Online at http://ele.net/acheulean/FPatROM.htm.
 
 Galton, F. (1886). Regression Towards Mediocrity in Hereditary Stature _Journal of the Anthropological Institute_, 15, 246-263. http://www.jstor.org/stable/2841583
 
-Krishnamoorthy, K., & Lee, M. (2014). Improved tests for the equality of normal coefficients of variation. _Computational Statistics_, 29(1-2), 215-232.
+Krishnamoorthy, K., & Lee, M. (2014). Improved tests for the equality of normal coefficients of variation. _Computational Statistics_, 29(1-2), 215-232. http://link.springer.com/article/10.1007/s00180-013-0445-2
 
 Pearson, K. (1896). Mathematical Contributions to the Theory of Evolution. III. Regression, Heredity, and Panmixia. _Philosophical Transactions of the Royal Society of London_. Series A, Containing Papers of a Mathematical or Physical Character, 187, 253-318. Retrieved from http://www.jstor.org/stable/90707
