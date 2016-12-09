@@ -69,7 +69,7 @@ devtools::install_github("benmarwick/cvequality")
 
 ### Using the functions with raw data of individual observations
 
-To demonstrate the use the functions with raw data we will use Galton's [(1886)](http://www.jstor.org/stable/2841583) observations of heights (in inches) of 934 children in 205 families. This is the same dataset that Pearson used when he introduced the $c_v$
+To demonstrate the use the functions with raw data we will use Galton's [(1886)](http://www.jstor.org/stable/2841583) observations of heights (in inches) of 934 children in 205 families. This is one of the datasets that Pearson used when he introduced the $c_v$
 
 ```{r}
 # read in the data, we obtained this from the HistData package
@@ -134,8 +134,6 @@ For something a little different, let's look at measurements of 600 stone artefa
 
 ```{r}
 # read in the data, we obtained this from the archdata package
-GaltonFamilies <- read.csv("GaltonFamilies.csv")
-
 handaxes <- read.csv("Handaxes.csv")
 ```
 
@@ -237,7 +235,7 @@ asymptotic_test2(k = nrow(miller),
 
 ```
 
-The asymptotic test statistic is `r miller_asymptotic_test2$D_AD`, which gives a p-value of `r miller_asymptotic_test2$p_value`. Assuming a typical value of 0.05 for $\alpha$, this test does lead us to reject the hypothesis of no difference in variance. So we would conclude that the ELISA values are no less variable than the other two groups.
+The asymptotic test statistic is `r miller_asymptotic_test2$D_AD`, which gives a p-value of `r miller_asymptotic_test2$p_value`. Assuming a typical value of 0.05 for $\alpha$, this test does _not_ lead us to reject the hypothesis of no difference in variance. So we would conclude that the ELISA values are no less variable than the other two groups.
 
 Let's see how the modified signed-likelihood ratio test performs:
 
