@@ -4,7 +4,11 @@
 * win-builder (devel and release)
 
 # Notes to self about testing
+
+# Windows on CRAN
 devtools::build_win()
+
+# r-hub multiple systems
 devtools::install_github("r-hub/rhub")
 rhub::validate_email()
 rhub::list_validated_emails()
