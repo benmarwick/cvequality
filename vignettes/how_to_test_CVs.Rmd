@@ -63,6 +63,8 @@ For each test there are two functions, which we demonstrate below. The first fun
 To install the package:
 
 ```{r eval = FALSE}
+# we use the devtools package to install from GitHub
+# you may need to run install.packages("devtools") first
 devtools::install_github("benmarwick/cvequality")
 ```
 
@@ -125,7 +127,8 @@ child_test_summary <-
                                   child_height_by_gender_cv_test_MSLRT$p_value),
              check.names = FALSE)
 
-kable(child_test_summary, caption =  "Summary of tests on the equality of CVs in child heights by gender")
+kable(child_test_summary, 
+      caption =  "Summary of tests on the equality of CVs in child heights by gender")
 ```
 
 We conclude that the $c_v$ values are very similar, and there is no difference in the variation of heights in male and female children. 
@@ -135,6 +138,10 @@ For something a little different, let's look at measurements of 600 stone artefa
 ```{r}
 # read in the data, we obtained this from the archdata package
 handaxes <- read.csv("Handaxes.csv")
+
+# take a quick look
+kable(head(handaxes), 
+      caption = "Preview of first few rows of the handaxes data")
 ```
 
 We need to reshape the data from the one-artefact-per-line format to a long format where the variable names are in one column, and the value for that variable is in another column:
@@ -146,6 +153,10 @@ handaxes_reshape <-
   select(c(L, L1, B, B1, B2, T, T1)) %>% 
   gather(variable, value) %>% 
   na.omit
+
+# take a quick look
+kable(head(handaxes_reshape), 
+      caption = "Preview of first few rows of the handaxes data")
 ```
 
 Let's have a look to get an idea of the variation in each variable:
@@ -248,9 +259,7 @@ mlrt_test2(nr = 1e4,
 
 ```
 
-This results in `r miller_mlrt_test2$D_AD` for the test statistic, and a p-value of `r miller_mlrt_test2$p_value`. This p-value would lead us to reject the hypothesis of no difference in variance. So unlike the asymptotic test, this M-SLR test would conclude that the ELISA values _are_ significantly less variable than the other two groups, consistent with our osbervations of the plot. 
-
-
+This results in `r miller_mlrt_test2$D_AD` for the test statistic, and a p-value of `r miller_mlrt_test2$p_value`. This p-value would lead us to reject the hypothesis of no difference in variance. So unlike the asymptotic test, this M-SLR test would conclude that the ELISA values _are_ significantly less variable than the other two groups, consistent with our observations of the plot. 
 
 ## References
 
