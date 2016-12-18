@@ -25,8 +25,8 @@ This package contains functions to test for significant differences in coefficen
 To install the package:
 
 ```{r eval = FALSE}
-if (!require("devtools")) install.packages("devtools") # check if you have devtools, if not, it will be installed here
-devtools::install_github("benmarwick/cvequality")
+if (!require("ghit")) install.packages("ghit") # check if you have devtools, if not, it will be installed here
+ghit::install_github("benmarwick/cvequality")
 ```
 
 Please see the [vignette](vignettes/how_to_test_CVs.Rmd) for detailed examples of how to use the functions in this package. 
