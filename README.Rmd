@@ -25,6 +25,7 @@ This package contains functions to test for significant differences in coefficen
 To install the package:
 
 ```{r eval = FALSE}
+if (!require("devtools")) install.packages("devtools") # check if you have devtools, if not, it will be installed here
 devtools::install_github("benmarwick/cvequality")
 ```
 
