@@ -1,6 +1,6 @@
 library(cvequality)
 
-context("mlrt_test2")
+context("mslr_test2")
 
 #' Summary stats from Feltz and Miller 1996
 #'
@@ -13,9 +13,9 @@ miller <- data.frame(test = c('ELISA', 'WEHI', '`Viral inhibition`'),
 miller$SD <- with(miller, CV * Mean)
 #'
 
-  test_that("mlrt_test2", {
-    expect_equal(mlrt_test2(nr = 1e4, n = miller$N, s = miller$SD, x = miller$Mean),
-    list(MLRT = 6.64317,
+  test_that("mslr_test2", {
+    expect_equal(mslr_test2(nr = 1e4, n = miller$N, s = miller$SD, x = miller$Mean),
+    list(MSLRT = 6.64317,
          p_value = 0.03609557),
     tolerance = .002)
   })

@@ -2,5 +2,5 @@
 
 export(asymptotic_test)
 export(asymptotic_test2)
-export(mlrt_test)
-export(mlrt_test2)
+export(mslr_test)
+export(mslr_test2)

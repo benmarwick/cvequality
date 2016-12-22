@@ -111,7 +111,7 @@ We can repeat the test with Krishnamoorthy and Lee's (2014) modified signed-like
 
 child_height_by_gender_cv_test_MSLRT <- 
 with(GaltonFamilies, 
-     mlrt_test(nr = 1e4, 
+     mslr_test(nr = 1e4, 
                childHeight,
                gender))
 ```
@@ -180,7 +180,7 @@ with(handaxes_reshape,
 
 handaxes_mlrt_test <- 
 with(handaxes_reshape, 
-     mlrt_test(nr = 1e4, 
+     mslr_test(nr = 1e4, 
                value, 
                variable))
 ```
@@ -252,7 +252,7 @@ Let's see how the modified signed-likelihood ratio test performs:
 
 ```{r}
 miller_mlrt_test2 <-
-mlrt_test2(nr = 1e4, 
+mslr_test2(nr = 1e4, 
            n = miller$N, 
            s = miller$SD, 
            x = miller$Mean)

@@ -151,10 +151,10 @@ asymptotic_test2 <-
 #'  x <- rnorm(100)
 #'  y <- unlist(lapply(letters[1:5], function(i) rep(i, 20)))
 #'
-#'  mlrt_test(nr = 1e3, x, y)
+#'  mslr_test(nr = 1e3, x, y)
 #'
 #'
-mlrt_test <-
+mslr_test <-
   function(nr = 1e3, x, y){
 
     if (!is.numeric(x) && !is.numeric(y) && !is.character(y)) {
@@ -204,7 +204,7 @@ mlrt_test <-
     pval <- 1.0-pchisq(statm,k-1)
 
 
-    return(list(MLRT = statm,
+    return(list(MSLRT = statm,
                 p_value = pval))
   }
 
@@ -239,10 +239,10 @@ mlrt_test <-
 #' # compute SD from mean and cv
 #' miller$SD <- with(miller, CV * Mean)
 #'
-#'  mlrt_test2(nr = 1e3, n = miller$N, s = miller$SD, x = miller$Mean)
+#'  mslr_test2(nr = 1e3, n = miller$N, s = miller$SD, x = miller$Mean)
 #'
 #'
-mlrt_test2 <-
+mslr_test2 <-
   function(nr, n, x, s){
 
     if (!is.numeric(nr) &&!is.numeric(n) && !is.integer(n) && !is.numeric(s) && !is.numeric(x)) {
@@ -274,7 +274,7 @@ mlrt_test2 <-
   pval <- 1.0-pchisq(statm,k-1)
 
 
-  return(list(MLRT = statm,
+  return(list(MSLRT = statm,
               p_value = pval))
 }
 
