@@ -3,6 +3,14 @@
 * ubuntu 12.04 (on travis-ci & r-hub), R 3.3.2  
 * win-builder (devel and release)
 
+## Third attempt at initial submit
+
+* Kurt Hornik writes " pls provide DOIs for the references in the Description"
+* Added DOIs in Description like so: Author (date) <DOI:xxx/xxx>
+
+R CMD check results
+0 errors | 0 warnings | 0 notes
+
 ## Second attempt at initial submit
 
 * Received feedback from Uwe Ligges
