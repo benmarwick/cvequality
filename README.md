@@ -10,7 +10,7 @@ This package contains functions to test for significant differences in coefficie
 To install the package:
 
 ``` r
-if (!require("ghit")) install.packages("ghit") # check if you have devtools, if not, it will be installed here
+if (!require("ghit")) install.packages("ghit") # check if you have ghit (to install pkgs from github), if not, it will be installed here
 ghit::install_github("benmarwick/cvequality")
 ```
 
