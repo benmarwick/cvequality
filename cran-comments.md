@@ -3,13 +3,40 @@
 * ubuntu 12.04 (on travis-ci & r-hub), R 3.3.2  
 * win-builder (devel and release)
 
+## Fourth attempt at initial submit
+
+* Kurt Hornik writes "DOI processing does not handle embedded < and >."
+* recommends I try percent-encoding for angle brackets in DOI, so I've made that change. 
+
+R CMD check results
+0 errors | 0 warnings | 1 note (from win-build)
+
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'Ben Marwick <benmarwick@gmail.com>'
+
+New submission
+
+Possibly mis-spelled words in DESCRIPTION:
+  Feltz (8:126)
+  Krishnamoorthy (8:247)
+
 ## Third attempt at initial submit
 
-* Kurt Hornik writes " pls provide DOIs for the references in the Description"
+* Kurt Hornik writes "pls provide DOIs for the references in the Description"
 * Added DOIs in Description like so: Author (date) <DOI:xxx/xxx>
 
 R CMD check results
-0 errors | 0 warnings | 0 notes
+0 errors | 0 warnings | 1 note (from win-build)
+
+Possibly mis-spelled words in DESCRIPTION:
+  Feltz (8:126)
+  Krishnamoorthy (8:243)
+
+Found the following (possibly) invalid DOIs:
+  DOI: 10.1002/(SICI)1097-0258(19960330)15:6<647::AID-SIM184
+    From: DESCRIPTION
+    Status: Not Found
+    Message: 404
 
 ## Second attempt at initial submit
 
