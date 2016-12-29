@@ -16,8 +16,8 @@ knitr::opts_chunk$set(
 [![Licence](https://img.shields.io/github/license/mashape/apistatus.svg)](http://choosealicense.com/licenses/mit/) 
 [![Travis-CI Build Status](https://travis-ci.org/benmarwick/cvequality.svg?branch=master)](https://travis-ci.org/benmarwick/cvequality)
 [![Coverage Status](https://img.shields.io/codecov/c/github/benmarwick/cvequality/master.svg)](https://codecov.io/github/benmarwick/cvequality?branch=master) 
-[![cran version](http://www.r-pkg.org/badges/version/cvequality)](https://cran.rstudio.com/web/packages/cvequality/index.html) 
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/cvequality)](https://cran.rstudio.com/web/packages/cvequality/index.html)
+[![cran version](http://www.r-pkg.org/badges/version/cvequality)](https://cran.r-project.org/package=cvequality) 
+[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/cvequality)](https://cran.r-project.org/package=cvequality)
 [![ORCiD](https://img.shields.io/badge/ORCiD-0000--0001--7879--4531-green.svg)](http://orcid.org/0000-0001-7879-4531) 
 
 ## cvequality: A package of tests for the equality of coefficients of variation from multiple groups
