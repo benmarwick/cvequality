@@ -17,3 +17,5 @@ Suggests: knitr,
     ggbeeswarm,
     covr
 VignetteBuilder: knitr
+URL: https://github.com/benmarwick/cvequality
+BugReports: https://github.com/benmarwick/cvequality/issues
