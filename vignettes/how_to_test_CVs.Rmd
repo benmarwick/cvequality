@@ -17,6 +17,31 @@ knitr::opts_chunk$set(echo = TRUE,
                       message = FALSE)
 ```
 
+## Preamble
+
+If you use this package, please cite both the package and the paper that first presented the algorithm that you used (see below for details). Cite the package as follows:
+
+Marwick, B. and K. Krishnamoorthy `r format(Sys.Date(), "%Y")` cvequality: Tests for the Equality of Coefficients of Variation from Multiple Groups. R software package
+version 0.1.3. Retrieved from {https://github.com/benmarwick/cvequality, on `r format(Sys.Date(), "%d/%m/%Y")`
+
+And reference it in your text similar to this example:
+
+"We used the R package cvequality (Version 0.1.3; Marwick and Krishnamoorthy `r format(Sys.Date(), "%Y")`) to test for significant differences [etc.]."
+
+
+A BibTeX entry for LaTeX users is:
+
+```
+ @Manual{,
+    title = {cvequality: Tests for the Equality of Coefficients of Variation from Multiple Groups},
+    author = {Ben Marwick and Kalimuthu Krishnamoorthy},
+    note = {R package version 0.1.3},
+    url = {https://github.com/benmarwick/cvequality},
+  }
+```
+
+You can also access the citation details from the R console with `citation(package = "cvequality")`
+
 ## Introduction
 
 The [coefficient of variation statistic](https://en.wikipedia.org/wiki/Coefficient_of_variation) is a simple and widely-used standardized measure of the spread of a set of measurements of a sample. It is a useful value because it allows us to directly compare variation in samples measured with different units, or with very different means. For example, with coefficients of variation we can compare the relative variability of lengths with that of weights, and so forth. It is also known as as relative standard deviation (RSD), and defined as the standard deviation divided by the mean:
