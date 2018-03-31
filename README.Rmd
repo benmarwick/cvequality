@@ -1,7 +1,7 @@
 ---
 output: github_document
 ---
-
+<!-- rmarkdown v1 -->
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, echo = FALSE}
@@ -11,6 +11,8 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 ```
+
+
 [![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-brightgreen.svg)](https://github.com/benmarwick/cvequality/commits/master) 
 [![minimal R version](https://img.shields.io/badge/R%3E%3D-`r as.character(getRversion())`-brightgreen.svg)](https://cran.r-project.org/)
 [![Licence](https://img.shields.io/github/license/mashape/apistatus.svg)](http://choosealicense.com/licenses/mit/) 
@@ -18,7 +20,8 @@ knitr::opts_chunk$set(
 [![Coverage Status](https://img.shields.io/codecov/c/github/benmarwick/cvequality/master.svg)](https://codecov.io/github/benmarwick/cvequality?branch=master) 
 [![cran version](http://www.r-pkg.org/badges/version/cvequality)](https://cran.r-project.org/package=cvequality) 
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/cvequality)](https://cran.r-project.org/package=cvequality)
-[![ORCiD](https://img.shields.io/badge/ORCiD-0000--0001--7879--4531-green.svg)](http://orcid.org/0000-0001-7879-4531) 
+[![ORCiD](https://img.shields.io/badge/ORCiD-0000--0001--7879--4531-green.svg)](http://orcid.org/0000-0001-7879-4531)
+
 
 ## cvequality: A package of tests for the equality of coefficients of variation from multiple groups
 
@@ -26,7 +29,7 @@ This package contains functions to test for significant differences in coefficie
 
 ### Citation
 
-If you use this package, please cite both the package and the paper that first presented the algorithm that you used (see the [vignette](https://cran.r-project.org/web/packages/cvequality/vignettes/how_to_test_CVs.html) for details of these). Cite the package as follows:
+If you use this package, please cite both the package and the paper that first presented the algorithm that you used (see the [vignette on CRAN](https://CRAN.R-project.org/package=cvequality) for details of these). Cite the package as follows:
 
 > Marwick, B. and K. Krishnamoorthy `r format(Sys.Date(), "%Y")` cvequality: Tests for the Equality of Coefficients of Variation from Multiple Groups. R software package version 0.1.3. Retrieved from https://github.com/benmarwick/cvequality, on `r format(Sys.Date(), "%d/%m/%Y")`
 
@@ -64,7 +67,7 @@ if (!require("ghit")) install.packages("ghit") # check if you have ghit (to inst
 ghit::install_github("benmarwick/cvequality")
 ```
 
-Please see the [vignette](https://cran.r-project.org/web/packages/cvequality/vignettes/how_to_test_CVs.html) for detailed examples of how to use the functions in this package. 
+Please see the [vignette on CRAN](https://CRAN.R-project.org/package=cvequality) for detailed examples of how to use the functions in this package. 
 
 ### Contributing and Getting Help
 

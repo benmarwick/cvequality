@@ -1,7 +1,24 @@
-## Test environments
-* OS X         (on travis-ci), R 3.3.2
-* ubuntu 12.04 (on travis-ci & r-hub), R 3.3.2  
-* win-builder (devel and release)
+## First attempt at update
+
+* Uwe Ligges writes:
+
+Found the following (possibly) invalid URLs:
+   URL:
+https://cran.r-project.org/web/packages/cvequality/vignettes/how_to_test_CVs.html
+     From: README.md
+     Status: 200
+     Message: OK
+     CRAN URL not in canonical form
+   The canonical URL of the CRAN page for a package is
+     https://CRAN.R-project.org/package=pkgname
+
+The Date field is over a month old.
+
+* I changed the URL to the canonical form (odd that linking to the vignette directly is not ok)
+* I changed the date field in DESC to today
+
+R CMD check results
+0 errors | 0 warnings | 0 notes
 
 ## Fourth attempt at initial submit
 
