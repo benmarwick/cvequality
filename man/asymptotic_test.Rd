@@ -27,4 +27,3 @@ of variation from k population. Stat Med 15:647–658
  asymptotic_test(x, y)
 
 }
-

@@ -39,4 +39,3 @@ miller$SD <- with(miller, CV * Mean)
 \references{
 \url{http://link.springer.com/article/10.1007/s00180-013-0445-2}
 }
-

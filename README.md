@@ -11,11 +11,11 @@ This package contains functions to test for significant differences in coefficie
 
 If you use this package, please cite both the package and the paper that first presented the algorithm that you used (see the [vignette](https://cran.r-project.org/web/packages/cvequality/vignettes/how_to_test_CVs.html) for details of these). Cite the package as follows:
 
-Marwick, B. and K. Krishnamoorthy 2017 cvequality: Tests for the Equality of Coefficients of Variation from Multiple Groups. R software package version 0.1.3. Retrieved from {<https://github.com/benmarwick/cvequality>, on 17/10/2017
+> Marwick, B. and K. Krishnamoorthy 2017 cvequality: Tests for the Equality of Coefficients of Variation from Multiple Groups. R software package version 0.1.3. Retrieved from <https://github.com/benmarwick/cvequality>, on 17/10/2017
 
 And reference it in your text similar to this example:
 
-"We used the R package cvequality (Version 0.1.3; Marwick and Krishnamoorthy 2017) to test for significant differences \[etc.\]."
+> "We used the R package cvequality (Version 0.1.3; Marwick and Krishnamoorthy 2017) to test for significant differences \[etc.\]."
 
 A BibTeX entry for LaTeX users is:
 

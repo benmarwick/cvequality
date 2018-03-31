@@ -21,13 +21,11 @@ knitr::opts_chunk$set(echo = TRUE,
 
 If you use this package, please cite both the package and the paper that first presented the algorithm that you used (see below for details). Cite the package as follows:
 
-Marwick, B. and K. Krishnamoorthy `r format(Sys.Date(), "%Y")` cvequality: Tests for the Equality of Coefficients of Variation from Multiple Groups. R software package
-version 0.1.3. Retrieved from {https://github.com/benmarwick/cvequality, on `r format(Sys.Date(), "%d/%m/%Y")`
+> Marwick, B. and K. Krishnamoorthy `r format(Sys.Date(), "%Y")` cvequality: Tests for the Equality of Coefficients of Variation from Multiple Groups. R software package version 0.1.3. Retrieved from https://github.com/benmarwick/cvequality, on `r format(Sys.Date(), "%d/%m/%Y")`
 
 And reference it in your text similar to this example:
 
-"We used the R package cvequality (Version 0.1.3; Marwick and Krishnamoorthy `r format(Sys.Date(), "%Y")`) to test for significant differences [etc.]."
-
+> "We used the R package cvequality (Version 0.1.3; Marwick and Krishnamoorthy `r format(Sys.Date(), "%Y")`) to test for significant differences [etc.]."
 
 A BibTeX entry for LaTeX users is:
 
@@ -172,7 +170,8 @@ kable(head(handaxes),
 We need to reshape the data from the one-artefact-per-line format to a long format where the variable names are in one column, and the value for that variable is in another column:
 
 ```{r}
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 handaxes_reshape <- 
   handaxes %>% 
   select(c(L, L1, B, B1, B2, T, T1)) %>% 

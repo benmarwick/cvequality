@@ -32,4 +32,3 @@ Modified signed-likelihood ratio test (SLRT) for equality of CVs, using measurem
 \url{http://link.springer.com/article/10.1007/s00180-013-0445-2}
 Krishnamoorthy, K. & Lee, M. Comput Stat (2014) 29: 215. doi:10.1007/s00180-013-0445-2
 }
-

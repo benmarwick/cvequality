@@ -19,4 +19,3 @@ xx
 \description{
 LRT_STAT, required by mlrt_test
 }
-

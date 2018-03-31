@@ -37,4 +37,3 @@ miller$SD <- with(miller, CV * Mean)
  asymptotic_test2(k = nrow(miller), n = miller$N, s = miller$SD, x = miller$Mean)
 
 }
-
