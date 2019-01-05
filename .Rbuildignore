@@ -6,3 +6,6 @@
 ^CONDUCT\.md$
 ^cran-comments\.md$
 ^codecov\.yml$
+^cvequality\.Rcheck$
+^cvequality.*\.tar\.gz$
+^cvequality.*\.tgz$

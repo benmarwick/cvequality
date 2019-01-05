@@ -22,7 +22,11 @@ globalVariables(c("stats", "aggregate", "pchisq", "rchisq", "rnorm", "sd"))
 #'  asymptotic_test(x, y)
 #'
 asymptotic_test <-
-  function(x, y){
+  function(x, y, seed){
+
+    ## set the seed to ensure reproducibiilty
+    if (!missing(seed))
+      set.seed(seed)
 
     if (!is.numeric(x) && (!is.numeric(y) | !is.character(y) | !is.integer(y))) {
       warning("x is not numeric or y is not numeric, character or integer: returning NA")
@@ -95,7 +99,11 @@ asymptotic_test <-
 #'  asymptotic_test2(k = nrow(miller), n = miller$N, s = miller$SD, x = miller$Mean)
 #'
 asymptotic_test2 <-
-  function(k, n, s, x){
+  function(k, n, s, x, seed){
+
+    ## set the seed to ensure reproducibiilty
+    if (!missing(seed))
+      set.seed(seed)
 
 
     if (!is.integer(k) && !is.numeric(k) && !is.integer(n) && !is.numeric(n) && !is.numeric(s) && !is.numeric(x) ){
@@ -155,7 +163,11 @@ asymptotic_test2 <-
 #'
 #'
 mslr_test <-
-  function(nr = 1e3, x, y){
+  function(nr = 1e3, x, y, seed){
+
+    ## set the seed to ensure reproducibiilty
+    if (!missing(seed))
+      set.seed(seed)
 
     if (!is.numeric(x) && !is.numeric(y) && !is.character(y)) {
       warning("x is not numeric or y is not numeric or character: returning NA")
@@ -243,7 +255,11 @@ mslr_test <-
 #'
 #'
 mslr_test2 <-
-  function(nr, n, x, s){
+  function(nr, n, x, s, seed){
+
+    ## set the seed to ensure reproducibiilty
+    if (!missing(seed))
+      set.seed(seed)
 
     if (!is.numeric(nr) &&!is.numeric(n) && !is.integer(n) && !is.numeric(s) && !is.numeric(x)) {
       warning("input values are not numeric: returning NA")
@@ -287,7 +303,11 @@ mslr_test2 <-
 #'
 #' @return xx
 #'
-LRT_STAT <- function(n, x, s){
+LRT_STAT <- function(n, x, s, seed){
+
+  ## set the seed to ensure reproducibiilty
+  if (!missing(seed))
+    set.seed(seed)
 
   k <- length(x)
   df <- n-1

@@ -1,7 +1,7 @@
 Package: cvequality
 Type: Package
 Title: Tests for the Equality of Coefficients of Variation from Multiple Groups
-Version: 0.1.3
+Version: 0.2.0
 Authors@R: c(person("Ben", "Marwick", email = "benmarwick@gmail.com", role = c("aut", "cre")), person("Kalimuthu", "Krishnamoorthy", email = "krishna@louisiana.edu", role = c("aut")))
 Maintainer: Ben Marwick <benmarwick@gmail.com>
 Description: Contains functions for testing for significant differences between multiple coefficients of variation. Includes Feltz and Miller's (1996) <DOI:10.1002/(SICI)1097-0258(19960330)15:6%3C647::AID-SIM184%3E3.0.CO;2-P> asymptotic test and Krishnamoorthy and Lee's (2014) <DOI:10.1007/s00180-013-0445-2> modified signed-likelihood ratio test. See the vignette for more, including full details of citations.

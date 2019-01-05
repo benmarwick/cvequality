@@ -7,8 +7,8 @@ output: github_document
 
 
 
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--03--31-brightgreen.svg)](https://github.com/benmarwick/cvequality/commits/master) 
-[![minimal R version](https://img.shields.io/badge/R%3E%3D-3.4.4-brightgreen.svg)](https://cran.r-project.org/)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2019--01--05-brightgreen.svg)](https://github.com/benmarwick/cvequality/commits/master) 
+[![minimal R version](https://img.shields.io/badge/R%3E%3D-3.5.0-brightgreen.svg)](https://cran.r-project.org/)
 [![Licence](https://img.shields.io/github/license/mashape/apistatus.svg)](http://choosealicense.com/licenses/mit/) 
 [![Travis-CI Build Status](https://travis-ci.org/benmarwick/cvequality.svg?branch=master)](https://travis-ci.org/benmarwick/cvequality)
 [![Coverage Status](https://img.shields.io/codecov/c/github/benmarwick/cvequality/master.svg)](https://codecov.io/github/benmarwick/cvequality?branch=master) 
@@ -25,11 +25,11 @@ This package contains functions to test for significant differences in coefficie
 
 If you use this package, please cite both the package and the paper that first presented the algorithm that you used (see the [vignette on CRAN](https://CRAN.R-project.org/package=cvequality) for details of these). Cite the package as follows:
 
-> Marwick, B. and K. Krishnamoorthy 2018 cvequality: Tests for the Equality of Coefficients of Variation from Multiple Groups. R software package version 0.1.3. Retrieved from https://github.com/benmarwick/cvequality, on 31/03/2018
+> Marwick, B. and K. Krishnamoorthy 2019 cvequality: Tests for the Equality of Coefficients of Variation from Multiple Groups. R software package version 0.1.3. Retrieved from https://github.com/benmarwick/cvequality, on 05/01/2019
 
 And reference it in your text similar to this example:
 
-> "We used the R package cvequality (Version 0.1.3; Marwick and Krishnamoorthy 2018) to test for significant differences [etc.]."
+> "We used the R package cvequality (Version 0.2.0; Marwick and Krishnamoorthy 2019) to test for significant differences [etc.]."
 
 A BibTeX entry for LaTeX users is:
 
@@ -59,8 +59,7 @@ Or you can get the development version from GitHub:
 
 ```r
 # or from GitHub
-if (!require("ghit")) install.packages("ghit") # check if you have ghit (to install pkgs from github), if not, it will be installed here
-ghit::install_github("benmarwick/cvequality")
+source("https://install-github.me/benmarwick/cvequality")
 ```
 
 Please see the [vignette on CRAN](https://CRAN.R-project.org/package=cvequality) for detailed examples of how to use the functions in this package. 
