@@ -4,7 +4,7 @@
 \alias{asymptotic_test2}
 \title{Asymptotic test for the equality of coefficients of variation from k populations, using summary statistics when raw measurement data are not available.}
 \usage{
-asymptotic_test2(k, n, s, x)
+asymptotic_test2(k, n, s, x, seed)
 }
 \arguments{
 \item{k}{a numeric vector the number of groups}
@@ -14,6 +14,8 @@ asymptotic_test2(k, n, s, x)
 \item{s}{a numeric vector the standard deviation of each group}
 
 \item{x}{a numeric vector the mean of each group}
+
+\item{seed}{optional, an integer that is the starting point used in the generation of a sequence of random numbers. Include a seed if you want reproducible output.}
 }
 \value{
 a list with the test statistic and p-value

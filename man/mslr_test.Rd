@@ -4,7 +4,7 @@
 \alias{mslr_test}
 \title{Modified signed-likelihood ratio test (SLRT) for equality of CVs, using measurement data}
 \usage{
-mslr_test(nr = 1000, x, y)
+mslr_test(nr = 1000, x, y, seed)
 }
 \arguments{
 \item{nr}{numeric vector length one, number of simulation runs, default is 1e3}
@@ -12,6 +12,8 @@ mslr_test(nr = 1000, x, y)
 \item{x}{a numeric vector containing individual measurement values}
 
 \item{y}{a vector of any type containing a grouping variable}
+
+\item{seed}{optional, an integer that is the starting point used in the generation of a sequence of random numbers. Include a seed if you want reproducible output.}
 }
 \value{
 a list with the test statistic and p-value

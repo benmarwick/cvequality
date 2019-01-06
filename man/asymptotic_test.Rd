@@ -4,12 +4,14 @@
 \alias{asymptotic_test}
 \title{Asymptotic test for the equality of coefficients of variation from k populations, using measurement data}
 \usage{
-asymptotic_test(x, y)
+asymptotic_test(x, y, seed)
 }
 \arguments{
 \item{x}{a numeric vector containing individual measurement values}
 
 \item{y}{a vector of any type containing a grouping variable}
+
+\item{seed}{optional, an integer that is the starting point used in the generation of a sequence of random numbers. Include a seed if you want reproducible output.}
 }
 \value{
 a list with the test statistic and p-value

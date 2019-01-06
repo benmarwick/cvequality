@@ -10,6 +10,7 @@ globalVariables(c("stats", "aggregate", "pchisq", "rchisq", "rnorm", "sd"))
 #'
 #' @param x a numeric vector containing individual measurement values
 #' @param y a vector of any type containing a grouping variable
+#' @param seed optional, an integer that is the starting point used in the generation of a sequence of random numbers. Include a seed if you want reproducible output.
 #'
 #' @return a list with the test statistic and p-value
 #' @export
@@ -81,6 +82,7 @@ asymptotic_test <-
 #' @param n a numeric vector the numer of measurements in each group
 #' @param s a numeric vector the standard deviation of each group
 #' @param x a numeric vector the mean of each group
+#' @param seed optional, an integer that is the starting point used in the generation of a sequence of random numbers. Include a seed if you want reproducible output.
 #'
 #' @return a list with the test statistic and p-value
 #' @export
@@ -150,6 +152,7 @@ asymptotic_test2 <-
 #' @param nr numeric vector length one, number of simulation runs, default is 1e3
 #' @param x a numeric vector containing individual measurement values
 #' @param y a vector of any type containing a grouping variable
+#' @param seed optional, an integer that is the starting point used in the generation of a sequence of random numbers. Include a seed if you want reproducible output.
 #'
 #' @return a list with the test statistic and p-value
 #' @export
@@ -236,6 +239,7 @@ mslr_test <-
 #' @param n a numeric vector, the number of observations in each group
 #' @param x a numeric vector, the mean of each group
 #' @param s a numeric vector, the standard deviation of each group
+#' @param seed optional, an integer that is the starting point used in the generation of a sequence of random numbers. Include a seed if you want reproducible output.
 #'
 #' @return a list with the test statistic and p-value
 #' @export
@@ -300,6 +304,7 @@ mslr_test2 <-
 #' @param n ... as above
 #' @param x ...
 #' @param s ...
+#' @param seed optional, an integer that is the starting point used in the generation of a sequence of random numbers. Include a seed if you want reproducible output.
 #'
 #' @return xx
 #'

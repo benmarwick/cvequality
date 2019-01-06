@@ -4,7 +4,7 @@
 \alias{mslr_test2}
 \title{# Modified signed-likelihood ratio test (SLRT) for equality of CVs, using summary statistics when raw measurement data are not available.}
 \usage{
-mslr_test2(nr, n, x, s)
+mslr_test2(nr, n, x, s, seed)
 }
 \arguments{
 \item{nr}{numeric vector lenght one, number of simulation runs}
@@ -14,6 +14,8 @@ mslr_test2(nr, n, x, s)
 \item{x}{a numeric vector, the mean of each group}
 
 \item{s}{a numeric vector, the standard deviation of each group}
+
+\item{seed}{optional, an integer that is the starting point used in the generation of a sequence of random numbers. Include a seed if you want reproducible output.}
 }
 \value{
 a list with the test statistic and p-value
