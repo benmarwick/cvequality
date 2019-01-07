@@ -1,3 +1,8 @@
+## Update to 0.2.0
+
+* add argument to set seed in functions
+* add content to vignette to show how to set seed
+
 ## First attempt at update
 
 * Uwe Ligges writes:
@@ -100,7 +105,7 @@ This is a new release, so there are no reverse dependencies.
 # Notes to self about testing
 
 # Windows on CRAN
-devtools::build_win()
+devtools::check_win_devel()
 
 # r-hub multiple systems
 devtools::install_github("r-hub/rhub")
@@ -109,4 +114,9 @@ rhub::list_validated_emails()
 rhub::check_on_linux()
 rhub::check_on_windows()
 rhub::check_for_cran()
+
+ch <- rhub::check_for_cran(env_vars = c(`_R_CHECK_FORCE_SUGGESTS_` = "false",
+show_status = FALSE))
+ch$update()
+ch$livelog(3)
 

@@ -20,4 +20,4 @@ Suggests: knitr,
 VignetteBuilder: knitr
 URL: https://github.com/benmarwick/cvequality
 BugReports: https://github.com/benmarwick/cvequality/issues
-Date: 2018-03-31
+Date: 2019-01-05

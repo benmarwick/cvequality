@@ -333,10 +333,10 @@ kable(how_many_unique_values)
 
 Feltz, C. J., & Miller, G. E. (1996). An asymptotic test for the equality of coefficients of variation from k populations. _Statistics in Medicine_, 15(6), 647-658. https://www.ncbi.nlm.nih.gov/pubmed/8731006 \doi{10.1002/(SICI)1097-0258(19960330)15:6<647::AID-SIM184>3.0.CO;2-P}
 
-Fox, William and Tony Baker. 2006. Dimensions of 600 Acheulean Handaxes from Furze Platt, Maidenhead, Berkshire, England. Online at http://ele.net/acheulean/FPatROM.htm.
+Fox, William and Tony Baker. 2006. Dimensions of 600 Acheulean Handaxes from Furze Platt, Maidenhead, Berkshire, England. Online at https://ele.net/acheulean/FPatROM.htm.
 
-Galton, F. (1886). Regression Towards Mediocrity in Hereditary Stature _Journal of the Anthropological Institute_, 15, 246-263. http://www.jstor.org/stable/2841583 \doi{10.2307/2841583}
+Galton, F. (1886). Regression Towards Mediocrity in Hereditary Stature _Journal of the Anthropological Institute_, 15, 246-263. https://www.jstor.org/stable/2841583 \doi{10.2307/2841583}
 
-Krishnamoorthy, K., & Lee, M. (2014). Improved tests for the equality of normal coefficients of variation. _Computational Statistics_, 29(1-2), 215-232. http://link.springer.com/article/10.1007/s00180-013-0445-2 \doi{10.1007/s00180-013-0445-2}
+Krishnamoorthy, K., & Lee, M. (2014). Improved tests for the equality of normal coefficients of variation. _Computational Statistics_, 29(1-2), 215-232. https://link.springer.com/article/10.1007/s00180-013-0445-2 \doi{10.1007/s00180-013-0445-2}
 
-Pearson, K. (1896). Mathematical Contributions to the Theory of Evolution. III. Regression, Heredity, and Panmixia. _Philosophical Transactions of the Royal Society of London_. Series A, Containing Papers of a Mathematical or Physical Character, 187, 253-318. Retrieved from http://www.jstor.org/stable/90707
+Pearson, K. (1896). Mathematical Contributions to the Theory of Evolution. III. Regression, Heredity, and Panmixia. _Philosophical Transactions of the Royal Society of London_. Series A, Containing Papers of a Mathematical or Physical Character, 187, 253-318. Retrieved from https://www.jstor.org/stable/90707
