@@ -42,7 +42,7 @@ You can also access the citation details from the R console with `citation(packa
 
 ## Introduction
 
-The [coefficient of variation statistic](https://en.wikipedia.org/wiki/Coefficient_of_variation) is a simple and widely-used standardized measure of the spread of a set of measurements of a sample. It is a useful value because it allows us to directly compare variation in samples measured with different units, or with very different means. For example, with coefficients of variation we can compare the relative variability of lengths with that of weights, and so forth. It is also known as as relative standard deviation (RSD), and defined as the standard deviation divided by the mean:
+The [coefficient of variation statistic](https://en.wikipedia.org/wiki/Coefficient_of_variation) is a simple and widely-used standardized measure of the spread of a set of measurements of a sample. It is a useful value because it allows us to directly compare variation in samples measured with different units, or with very different means. For example, with coefficients of variation we can compare the relative variability of lengths with that of weights, and so forth. It is also known as relative standard deviation (RSD), and defined as the standard deviation divided by the mean:
 
 $$c_v = \frac{\sigma}{\mu}$$
 
