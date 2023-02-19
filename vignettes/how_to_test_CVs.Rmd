@@ -69,7 +69,7 @@ $$\widehat{\tau }_c = \frac{\left( \sum _{j=1}^km_j\frac{S_j}{\bar{x}_j} \right)
 
 where 
 
-$$M=\sum _{j=1}^m m_j$$ 
+$$M=\sum _{j=1}^k m_j$$ 
 
 Then the test statistic can be computed with: 
 
